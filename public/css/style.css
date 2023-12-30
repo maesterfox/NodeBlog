@@ -191,6 +191,22 @@ img {
   margin: 5px 0 40px 0;
 }
 
+/* Alert Styles */
+.alert {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  color: #fff;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #28a745;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
 
 /* Home Article List */
 .articles__heading {
