@@ -130,6 +130,16 @@ router.get("/contact", (req, res) => {
   });
 });
 
+/**
+ * GET /
+ * About
+ */
+router.get("/layouts/admin.ejs", (req, res) => {
+  res.render("/admin", {
+    currentRoute: "/admin",
+  });
+});
+
 // function insertPostData () {
 //   Post.insertMany([
 //     {
