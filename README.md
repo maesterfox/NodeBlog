@@ -4,6 +4,9 @@ Description
 
 NodeBlog is a fully functional blogging platform developed using Node.js, Express, and MongoDB. This project offers a comprehensive solution for creating, managing, and viewing blog posts. It features a clean and intuitive interface, catering to both blog owners and readers with a rich set of functionalities.
 
+![Project directory flow](public/img/directory.JPG)
+
+
 Features
 
 CRUD Operations: Create, read, update, and delete blog posts.
