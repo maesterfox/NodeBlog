@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
 
-/**
- * GET /
- * HOME
- */
 router.get("", async (req, res) => {
   try {
     const locals = {
@@ -21,13 +17,12 @@ router.get("", async (req, res) => {
       .limit(perPage)
       .exec();
 
-    // Count is deprecated - please use countDocuments
-    // const count = await Post.count();
     const count = await Post.countDocuments({});
     const nextPage = parseInt(page) + 1;
     const hasNextPage = nextPage <= Math.ceil(count / perPage);
 
     res.render("index", {
+      query: req.query, // Add this line
       locals,
       data,
       current: page,

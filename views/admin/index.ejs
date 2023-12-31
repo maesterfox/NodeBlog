@@ -1,5 +1,14 @@
 <h3>Sign In</h3>
 
+<% if (locals.error) { %>
+  <p class="error-message"><%= locals.error %></p>
+<% } %>
+
+<% if (locals.successMessage) { %>
+  <p class="success-message"><%= locals.successMessage %></p>
+<% } %>
+
+
 <form action="/admin" method="POST">
 
   <label for="username"><b>Username</b></label>
@@ -12,8 +21,23 @@
 
 </form>
 
+
+
+
+<!-- Registration form here -->
+
+
 <h3>Register</h3>
+
+<% if (typeof registrationErrorMessage !== 'undefined') { %>
+  <p class="error-message"><%= registrationErrorMessage %></p>
+<% } %>
+
+<% if (typeof registrationSuccessMessage !== 'undefined') { %>
+  <p class="success-message"><%= registrationSuccessMessage %></p>
+<% } %>
 <form action="/register" method="POST">
+
 
   <label for="username"><b>Username</b></label>
   <input type="text" placeholder="Enter Username" name="username">
