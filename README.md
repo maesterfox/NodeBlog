@@ -42,7 +42,7 @@ npm start
 
 Usage
 
-Once the application is running, it can be accessed at http://localhost:3000 (or your configured port). Use the admin panel to manage posts, view them on the blog's main page, and respond to user inquiries through the contact form.
+Once the application is running, it can be accessed at http://localhost:5000 (or your configured port). Use the admin panel to manage posts, view them on the blog's main page, and respond to user inquiries through the contact form.
 
 Contributing
 
