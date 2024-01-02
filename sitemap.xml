@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/about</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/contact</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Admin Add Post Page -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/admin/add-post</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Admin Dashboard -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/admin/dashboard</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Admin Index -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/admin</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Search Page -->
+    <url>
+        <loc>https://blog.davidfoxdev.co.uk/search</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Post Page (Example) -->
+    <!-- Note: You should add a separate entry for each individual blog post -->
+    <!-- <url>
+        <loc>https://blog.davidfoxdev.co.uk/post/example-pos</loc>
+        <lastmod>2024-01-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url> -->
+
+    <!-- Additional pages can be added in a similar manner -->
+
+</urlset>

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /admin/add-post
+Disallow: /admin/dashboard
+
+Sitemap: https://blog.davidfoxdev.co.uk/sitemap.xml
