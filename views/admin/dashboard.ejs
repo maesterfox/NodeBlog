@@ -16,6 +16,20 @@
   <p class="error-message"><%= query.createError %></p>
 <% } %>
 
+<!-- Update -->
+<% if (locals.successMessage) { %>
+  <p class="success-message">
+    <%= locals.successMessage %>
+  </p>
+<% } %>
+
+<% if (query.error && query.error === 'Unauthorized') { %>
+  <p class="error-message">
+    Unauthorized access. You are not allowed to edit this post.
+  </p>
+<% } %>
+
+
 
 <!-- Rest of your dashboard view -->
 

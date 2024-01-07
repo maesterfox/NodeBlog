@@ -6,8 +6,9 @@ router.get("", async (req, res) => {
   try {
     const locals = {
       title:
-        "David Fox - Full Stack Developer | Innovative Web Development Projects and Insights",
-      description: "Simple Blog created with NodeJs, Express & MongoDb.",
+        "David Fox's Tech Blog | Insights into Full Stack Development with MERN",
+      description:
+        "Join me, David Fox, on my tech blog as I explore the world of Full Stack Development, sharing insights and experiences with the MERN stack (MongoDB, Express, React, Node.js). Dive into a variety of topics from coding challenges to the latest trends in web development.",
     };
 
     let perPage = 10;
@@ -82,7 +83,7 @@ router.get("/post/:id", async (req, res) => {
 router.post("/search", async (req, res) => {
   try {
     const locals = {
-      title: "Seach",
+      title: "Search",
       description: "Simple Blog created with NodeJs, Express & MongoDb.",
     };
 

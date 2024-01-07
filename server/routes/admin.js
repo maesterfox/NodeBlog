@@ -89,26 +89,27 @@ router.post("/admin", async (req, res) => {
  */
 router.get("/dashboard", authMiddleware, async (req, res) => {
   try {
-    // Retrieve user ID from the request, added by authMiddleware
     const userId = req.userId;
-
-    // Find the user by ID
     const user = await User.findById(userId);
+
+    // Determine the success message to display
+    let successMessage = "";
+    if (req.query.success === "true" && user) {
+      successMessage = `Login successful, hello ${user.username}`;
+    } else if (req.query.updateSuccess === "true") {
+      successMessage = "Post updated successfully";
+    }
 
     const locals = {
       title: "Dashboard",
       description: "Simple Blog created with NodeJs, Express & MongoDb.",
-      successMessage:
-        req.query.success === "true" && user
-          ? `Login successful, hello ${user.username}`
-          : "",
+      successMessage: successMessage, // Use the determined success message here
     };
 
-    // Fetch posts and populate the author's username
     const data = await Post.find().populate("author", "username");
 
     res.render("admin/dashboard", {
-      query: req.query, // Pass query parameters
+      query: req.query,
       locals,
       data,
       layout: adminLayout,
@@ -175,18 +176,28 @@ router.post("/add-post", authMiddleware, async (req, res) => {
  */
 router.get("/edit-post/:id", authMiddleware, async (req, res) => {
   try {
-    const locals = {
-      title: "Edit Post",
-      description: "Free NodeJs User Management System",
-    };
+    const post = await Post.findOne({ _id: req.params.id });
 
-    const data = await Post.findOne({ _id: req.params.id });
+    // Check if the logged-in user is the author of the post
+    if (post && post.author.toString() === req.userId) {
+      const locals = {
+        title: "Edit Post",
+        description: "Free NodeJs User Management System",
+      };
 
-    res.render("admin/edit-post", {
-      locals,
-      data,
-      layout: adminLayout,
-    });
+      if (!(post && post.author.toString() === req.userId)) {
+        res.redirect("/dashboard?error=Unauthorized");
+      }
+
+      res.render("admin/edit-post", {
+        locals,
+        data: post,
+        layout: adminLayout,
+      });
+    } else {
+      // Redirect or show an error message if not authorized
+      res.redirect("/dashboard?error=Unauthorized");
+    }
   } catch (error) {
     console.log(error);
   }
@@ -198,16 +209,23 @@ router.get("/edit-post/:id", authMiddleware, async (req, res) => {
  */
 router.put("/edit-post/:id", authMiddleware, async (req, res) => {
   try {
-    const authorUsername = req.userId; // Replace with the actual way of getting the logged-in username
+    const post = await Post.findById(req.params.id);
 
-    await Post.findByIdAndUpdate(req.params.id, {
-      title: req.body.title,
-      body: req.body.body,
-      author: authorId,
-      updatedAt: new Date(),
-    });
+    if (post && post.author.toString() === req.userId) {
+      await Post.findByIdAndUpdate(req.params.id, {
+        title: req.body.title,
+        body: req.body.body,
+        updatedAt: new Date(),
+      });
 
-    res.redirect(`/edit-post/${req.params.id}?updateSuccess=true`);
+      if (!(post && post.author.toString() === req.userId)) {
+        res.redirect(`/edit-post/${req.params.id}?error=Unauthorized`);
+      }
+
+      res.redirect("/dashboard?updateSuccess=true");
+    } else {
+      res.redirect(`/edit-post/${req.params.id}?error=Unauthorized`);
+    }
   } catch (error) {
     console.log(error);
   }
@@ -267,15 +285,18 @@ router.post("/register", async (req, res) => {
  */
 router.delete("/delete-post/:id", authMiddleware, async (req, res) => {
   try {
-    await Post.deleteOne({ _id: req.params.id });
-    // Redirect to dashboard with a success message query parameter
-    res.redirect("/dashboard?deleteSuccess=true");
+    const post = await Post.findById(req.params.id);
+
+    // Check if the logged-in user is the author of the post
+    if (post && post.author.toString() === req.userId) {
+      await Post.deleteOne({ _id: req.params.id });
+      res.redirect("/dashboard?deleteSuccess=true");
+    } else {
+      // Redirect or show an error message if not authorized
+      res.redirect("/dashboard?deleteError=Unauthorized");
+    }
   } catch (error) {
     console.log(error);
-    // Optionally, redirect with an error message
-    res.redirect(
-      "/dashboard?deleteError=" + encodeURIComponent("Error deleting post")
-    );
   }
 });
 
