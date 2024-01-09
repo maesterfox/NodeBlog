@@ -19,6 +19,8 @@ body {
   background-color: #FAF5EE;
   background-image: url("/img/img-noise-361x370.png");
   margin: 5em 10em;
+  visibility: hidden;
+
 }
 
 
@@ -41,6 +43,72 @@ textarea {
   padding: 0.7rem 0.75rem;
   margin-bottom: 1rem;
 }
+
+
+.modal {
+  background-image: url("/img/img-noise-361x370.png");
+  display: block; /* Show modal by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  transition: opacity 2s ease-in-out, visibility 2s ease-in-out; /* Smooth transition for opacity and visibility */
+  opacity: 1; /* Start fully visible */
+  visibility: visible; /* Start as visible */
+}
+
+.modal.fade-out {
+  opacity: 0; /* End fully transparent */
+  visibility: hidden; /* Hide after transition */
+}
+
+.modal-content {
+  border-radius: 12px;
+  margin: 15% auto; /* 15% from the top and centered */
+  font-style: italic;
+  font-family:'Times New Roman', Times, serif;
+  text-shadow: 0 0 2px black;
+  font-size: 2em;
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+  text-align: center;
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Keyframes for fading out */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Apply the animation to the quote text */
+#quoteText, #quoteAuthor {
+  opacity: 0; /* Start with text invisible */
+  animation-duration: 3s; /* Duration of animation */
+  animation-fill-mode: both; /* Maintain the style of the last keyframe when the animation is finished */
+}
+
+
+/* Define when the fade-in and fade-out animations should play */
+.modal.show .modal-content #quoteText,
+.modal.show .modal-content #quoteAuthor {
+  animation-name: fadeIn;
+}
+
+.modal.fade-out .modal-content #quoteText,
+.modal.fade-out .modal-content #quoteAuthor {
+  animation-name: fadeOut;
+}
+
 
 .btn {
   background-color: var(--black);
@@ -470,3 +538,9 @@ img {
 .icon:hover {
   color: rgb(116, 113, 80); 
 }
+
+
+
+/* Existing modal styles */
+
+

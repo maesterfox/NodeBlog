@@ -1,0 +1,98 @@
+[
+    {
+        "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+        "author": "Harold Abelson"
+    },
+    {
+        "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+        "author": "Martin Fowler"
+    },
+    {
+        "text": "First, solve the problem. Then, write the code.",
+        "author": "John Johnson"
+    },
+    {
+        "text": "Experience is the name everyone gives to their mistakes.",
+        "author": "Oscar Wilde"
+    },
+    {
+        "text": "In theory, there is no difference between theory and practice. But, in practice, there is.",
+        "author": "Jan L. A. van de Snepscheut"
+    },
+    {
+        "text": "The only way to learn a new programming language is by writing programs in it.",
+        "author": "Dennis Ritchie"
+    },
+    {
+        "text": "Sometimes it's better to leave something alone, to pause, and that's very true of programming.",
+        "author": "Joyce Wheeler"
+    },
+    {
+        "text": "Before software can be reusable it first has to be usable.",
+        "author": "Ralph Johnson"
+    },
+    {
+        "text": "The best method for accelerating a computer is the one that boosts it by 9.8 m/s².",
+        "author": "Anonymous"
+    },
+    {
+        "text": "It's not a bug – it's an undocumented feature.",
+        "author": "Anonymous"
+    },
+    {
+        "text": "Simplicity is the soul of efficiency.",
+        "author": "Austin Freeman"
+    },
+    {
+        "text": "Make it work, make it right, make it fast.",
+        "author": "Kent Beck"
+    },
+    {
+        "text": "Talk is cheap. Show me the code.",
+        "author": "Linus Torvalds"
+    },
+    {
+        "text": "Software is like entropy: It is difficult to grasp, weighs nothing, and obeys the Second Law of Thermodynamics; i.e., it always increases.",
+        "author": "Norman Augustine"
+    },
+    {
+        "text": "Optimism is an occupational hazard of programming; feedback is the treatment.",
+        "author": "Kent Beck"
+    },
+    {
+        "text": "When debugging, novices insert corrective code; experts remove defective code.",
+        "author": "Richard Pattis"
+    },
+    {
+        "text": "It's hardware that makes a machine fast. It's software that makes a fast machine slow.",
+        "author": "Craig Bruce"
+    },
+    {
+        "text": "There are only two kinds of languages: the ones people complain about and the ones nobody uses.",
+        "author": "Bjarne Stroustrup"
+    },
+    {
+        "text": "The best performance improvement is the transition from the nonworking state to the working state.",
+        "author": "J. Osterhout"
+    },
+    {
+        "text": "The function of good software is to make the complex appear to be simple.",
+        "author": "Grady Booch"
+    },
+    {
+        "text": "Complexity is anything that makes software hard to understand or to modify.",
+        "author": "John Outerhout"
+    },
+    {
+        "text": "Code never lies, comments sometimes do.",
+        "author": "Ron Jeffries"
+    },
+    {
+        "text": "One of my most productive days was throwing away 1000 lines of code.",
+        "author": "Ken Thompson"
+    },
+    {
+        "text": "Good code is its own best documentation.",
+        "author": "Steve McConnell"
+    }
+]

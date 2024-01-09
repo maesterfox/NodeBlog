@@ -1,6 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
+const Quote = require("../models/Quote"); // You need to create this model
+
+// Quote Generator
+router.get("/random-quote", async (req, res) => {
+  try {
+    const quote = await Quote.aggregate([{ $sample: { size: 1 } }]);
+    res.json(quote[0]);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 
 router.get("", async (req, res) => {
   try {
@@ -136,6 +147,17 @@ router.get("/layouts/admin.ejs", (req, res) => {
   res.render("/admin", {
     currentRoute: "/admin",
   });
+});
+
+// API endpoint to get a random quote
+router.get("/random-quote", async (req, res) => {
+  try {
+    const quote = await Quote.aggregate([{ $sample: { size: 1 } }]);
+    res.json(quote[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching quote");
+  }
 });
 
 module.exports = router;
