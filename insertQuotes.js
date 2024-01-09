@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // Replace with your MongoDB connection string
 const mongoURI =
-  "mongodb+srv://talentedmrfox:lKDKIJJcSwfUzXDQ@cluster0.uybc7dd.mongodb.net/";
+  "";
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
