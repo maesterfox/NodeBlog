@@ -20,28 +20,28 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("/data/quotes.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const randomQuote = data[Math.floor(Math.random() * data.length)];
-      document.getElementById("quoteText").innerText = randomQuote.text;
-      document.getElementById("quoteAuthor").innerText = randomQuote.author;
+// document.addEventListener("DOMContentLoaded", function () {
+//   fetch("/data/quotes.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const randomQuote = data[Math.floor(Math.random() * data.length)];
+//       document.getElementById("quoteText").innerText = randomQuote.text;
+//       document.getElementById("quoteAuthor").innerText = randomQuote.author;
 
-      var modal = document.getElementById("quoteModal");
-      modal.classList.add("show"); // Add class to show the modal and start text animation
+//       var modal = document.getElementById("quoteModal");
+//       modal.classList.add("show"); // Add class to show the modal and start text animation
 
-      // Start the fade-out after 3 seconds
-      setTimeout(function () {
-        modal.classList.remove("show");
-        modal.classList.add("fade-out");
-      }, 4000);
+//       // Start the fade-out after 3 seconds
+//       setTimeout(function () {
+//         modal.classList.remove("show");
+//         modal.classList.add("fade-out");
+//       }, 4000);
 
-      // Once the modal has faded, hide it completely and show main content
-      modal.addEventListener("transitionend", function () {
-        modal.style.display = "none";
-        document.body.style.visibility = "visible"; // Reveal the main content
-      });
-    })
-    .catch((error) => console.error("Error fetching quote:", error));
-});
+//       // Once the modal has faded, hide it completely and show main content
+//       modal.addEventListener("transitionend", function () {
+//         modal.style.display = "none";
+//         document.body.style.visibility = "visible"; // Reveal the main content
+//       });
+//     })
+//     .catch((error) => console.error("Error fetching quote:", error));
+// });
